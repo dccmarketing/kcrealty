@@ -26,9 +26,9 @@ function function_names_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on _s, use a find and replace
-	 * to change 'text-domain' to the name of your theme in all the template files
+	 * to change 'kcrealty' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'text-domain', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'kcrealty', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -50,8 +50,8 @@ function function_names_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'text-domain' ),
-		'social' => __( 'Social Links', 'text-domain' )
+		'primary' => __( 'Primary Menu', 'kcrealty' ),
+		'social' => __( 'Social Links', 'kcrealty' )
 	) );
 
 	/*
@@ -88,7 +88,7 @@ add_action( 'after_setup_theme', 'function_names_setup' );
 function function_names_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'text-domain' ),
+		'name'          => __( 'Sidebar', 'kcrealty' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -157,7 +157,7 @@ add_action( 'footer_left', 'custom_footer_left' );
 
 function custom_site_info() {
 
-	printf( __( '<div class="copyright">All content &copy %1$s <a href="%2$s" title="Login">%3$s</a></a></div>', 'text-domain' ), date( 'Y' ), get_admin_url(), get_bloginfo( 'name' ) );
+	printf( __( '<div class="copyright">All content &copy %1$s <a href="%2$s" title="Login">%3$s</a></a></div>', 'kcrealty' ), date( 'Y' ), get_admin_url(), get_bloginfo( 'name' ) );
 
 } // custom_site_info()
 add_action( 'site_info', 'custom_site_info' );
