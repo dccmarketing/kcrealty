@@ -12,7 +12,7 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
-if ( ! function_exists( 'function_names_setup' ) ) :
+if ( ! function_exists( 'kcrealty_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -20,7 +20,7 @@ if ( ! function_exists( 'function_names_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function function_names_setup() {
+function kcrealty_setup() {
 
 	/*
 	 * Make theme available for translation.
@@ -71,21 +71,21 @@ function function_names_setup() {
 	) );*/
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'function_names_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'kcrealty_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 
-} // function_names_setup()
-endif; // function_names_setup
-add_action( 'after_setup_theme', 'function_names_setup' );
+} // kcrealty_setup()
+endif; // kcrealty_setup
+add_action( 'after_setup_theme', 'kcrealty_setup' );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function function_names_widgets_init() {
+function kcrealty_widgets_init() {
 
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'kcrealty' ),
@@ -97,13 +97,13 @@ function function_names_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 
-} // function_names_widgets_init()
-add_action( 'widgets_init', 'function_names_widgets_init' );
+} // kcrealty_widgets_init()
+add_action( 'widgets_init', 'kcrealty_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function function_names_scripts() {
+function kcrealty_scripts() {
 
 	wp_enqueue_style( 'scriptname-style', get_stylesheet_uri() );
 
@@ -115,8 +115,8 @@ function function_names_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-} // function_names_scripts()
-add_action( 'wp_enqueue_scripts', 'function_names_scripts' );
+} // kcrealty_scripts()
+add_action( 'wp_enqueue_scripts', 'kcrealty_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -203,19 +203,19 @@ function pretty( $input ) {
  *
  * @return 	string 							modified menu
  */
-function function_names_menu_caret( $item_output, $item, $depth, $args ) {
+function kcrealty_menu_caret( $item_output, $item, $depth, $args ) {
 
 	if ( ! in_array( 'menu-item-has-children', $item->classes ) ) { return $item_output; }
 
 	$output = '<a href="' . $item->url . '">';
 	$output .= $item->title;
-	$output .= '<span class="children">' . function_names_get_svg( 'caret-down' ) . '</span>';
+	$output .= '<span class="children">' . kcrealty_get_svg( 'caret-down' ) . '</span>';
 	$output .= '</a>';
 
 	return $output;
 
-} // function_names_menu_caret()
-add_filter( 'walker_nav_menu_start_el', 'function_names_menu_caret', 10, 4 );
+} // kcrealty_menu_caret()
+add_filter( 'walker_nav_menu_start_el', 'kcrealty_menu_caret', 10, 4 );
 
 
 
@@ -231,13 +231,13 @@ add_filter( 'walker_nav_menu_start_el', 'function_names_menu_caret', 10, 4 );
  *
  * @return 	string 							modified menu
  */
-function function_names_social_menu_svgs( $item_output, $item, $depth, $args ) {
+function kcrealty_social_menu_svgs( $item_output, $item, $depth, $args ) {
 
 	if ( 'social' !== $args->theme_location ) { return $item_output; }
 
 	$host 	= parse_url( $item->url, PHP_URL_HOST );
 	$output = '<a href="' . $item->url . '" class="icon-menu">';
-	$class 	= function_names_get_svg_by_class( $item->classes );
+	$class 	= kcrealty_get_svg_by_class( $item->classes );
 
 	if ( ! empty( $class ) ) {
 
@@ -245,7 +245,7 @@ function function_names_social_menu_svgs( $item_output, $item, $depth, $args ) {
 
 	} else {
 
-		$output .= function_names_get_svg_by_url( $item->url );
+		$output .= kcrealty_get_svg_by_url( $item->url );
 
 	} // class check
 
@@ -253,8 +253,8 @@ function function_names_social_menu_svgs( $item_output, $item, $depth, $args ) {
 
 	return $output;
 
-} // function_names_social_menu_svgs()
-add_filter( 'walker_nav_menu_start_el', 'function_names_social_menu_svgs', 10, 4 );
+} // kcrealty_social_menu_svgs()
+add_filter( 'walker_nav_menu_start_el', 'kcrealty_social_menu_svgs', 10, 4 );
 
 
 /**
@@ -263,13 +263,13 @@ add_filter( 'walker_nav_menu_start_el', 'function_names_social_menu_svgs', 10, 4
  * @param  [type] $url [description]
  * @return [type]      [description]
  */
-function function_names_get_svg_by_class( $classes ) {
+function kcrealty_get_svg_by_class( $classes ) {
 
 	$output = '';
 
 	foreach ( $classes as $class ) {
 
-		$check = function_names_get_svg( $class );
+		$check = kcrealty_get_svg( $class );
 
 		if ( ! is_null( $check ) ) { $output .= $check; break; }
 
@@ -277,7 +277,7 @@ function function_names_get_svg_by_class( $classes ) {
 
 	return $output;
 
-} // function_names_get_svg_by_class()
+} // kcrealty_get_svg_by_class()
 
 /**
  * Gets the appropriate SVG based on a URL
@@ -285,25 +285,25 @@ function function_names_get_svg_by_class( $classes ) {
  * @param  [type] $url [description]
  * @return [type]      [description]
  */
-/*function function_names_get_svg_by_pageID( $ID ) {
+/*function kcrealty_get_svg_by_pageID( $ID ) {
 
 	$output = '';
 	$page 	= get_post( $ID );
 
 	switch( $page->post_title ) {
 
-		case 'Calendar' 			: $output .= function_names_get_svg( 'calendar' ); break;
-		case 'Camping' 				: $output .= function_names_get_svg( 'camping' ); break;
-		case 'Events & Festivals' 	: $output .= function_names_get_svg( 'calendar' ); break;
-		case 'Hotels' 				: $output .= function_names_get_svg( 'hotel' ); break;
-		case 'Motels' 				: $output .= function_names_get_svg( 'hotel' ); break;
-		case 'Travel Guides' 		: $output .= function_names_get_svg( 'map-location' ); break;
+		case 'Calendar' 			: $output .= kcrealty_get_svg( 'calendar' ); break;
+		case 'Camping' 				: $output .= kcrealty_get_svg( 'camping' ); break;
+		case 'Events & Festivals' 	: $output .= kcrealty_get_svg( 'calendar' ); break;
+		case 'Hotels' 				: $output .= kcrealty_get_svg( 'hotel' ); break;
+		case 'Motels' 				: $output .= kcrealty_get_svg( 'hotel' ); break;
+		case 'Travel Guides' 		: $output .= kcrealty_get_svg( 'map-location' ); break;
 
 	} // switch
 
 	return $output;
 
-} // function_names_get_svg_by_pageID()*/
+} // kcrealty_get_svg_by_pageID()*/
 
 /**
  * Gets the appropriate SVG based on a URL
@@ -311,25 +311,25 @@ function function_names_get_svg_by_class( $classes ) {
  * @param  [type] $url [description]
  * @return [type]      [description]
  */
-function function_names_get_svg_by_url( $url ) {
+function kcrealty_get_svg_by_url( $url ) {
 
 	$output = '';
 	$host 	= parse_url( $url, PHP_URL_HOST );
 
 	switch( $host ) {
 
-		case 'facebook.com' 	: $output .= function_names_get_svg( 'facebook' ); break;
-		case 'instagram.com' 	: $output .= function_names_get_svg( 'instagram' ); break;
-		case 'linked.com' 		: $output .= function_names_get_svg( 'linkedin' ); break;
-		case 'pinterest.com' 	: $output .= function_names_get_svg( 'pinterest' ); break;
-		case 'twitter.com' 		: $output .= function_names_get_svg( 'twitter' ); break;
-		case 'youtube.com' 		: $output .= function_names_get_svg( 'youtube' ); break;
+		case 'facebook.com' 	: $output .= kcrealty_get_svg( 'facebook' ); break;
+		case 'instagram.com' 	: $output .= kcrealty_get_svg( 'instagram' ); break;
+		case 'linked.com' 		: $output .= kcrealty_get_svg( 'linkedin' ); break;
+		case 'pinterest.com' 	: $output .= kcrealty_get_svg( 'pinterest' ); break;
+		case 'twitter.com' 		: $output .= kcrealty_get_svg( 'twitter' ); break;
+		case 'youtube.com' 		: $output .= kcrealty_get_svg( 'youtube' ); break;
 
 	} // switch
 
 	return $output;
 
-} // function_names_get_svg_by_url()
+} // kcrealty_get_svg_by_url()
 
 /**
  * Returns the requested SVG
@@ -338,7 +338,7 @@ function function_names_get_svg_by_url( $url ) {
  *
  * @return 	mixed 					The SVG code
  */
-function function_names_get_svg( $svg ) {
+function kcrealty_get_svg( $svg ) {
 
 	$output = '';
 
@@ -376,7 +376,7 @@ function function_names_get_svg( $svg ) {
 
 	return $output;
 
-} // function_names_get_svg()
+} // kcrealty_get_svg()
 
 /**
  * Returns the URL of the featured image
@@ -386,7 +386,7 @@ function function_names_get_svg( $svg ) {
  *
  * @return 	string | bool 				The URL of the featured image, otherwise FALSE
  */
-function function_names_get_thumbnail_url( $postID, $size = 'thumbnail' ) {
+function kcrealty_get_thumbnail_url( $postID, $size = 'thumbnail' ) {
 
 	if ( empty( $postID ) ) { return FALSE; }
 
@@ -400,7 +400,7 @@ function function_names_get_thumbnail_url( $postID, $size = 'thumbnail' ) {
 
 	return $thumb_array[0];
 
-} // function_names_get_thumbnail_url()
+} // kcrealty_get_thumbnail_url()
 
 /**
  * Add Themes Options page, if using ACF
