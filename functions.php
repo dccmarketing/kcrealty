@@ -1,6 +1,6 @@
 <?php
 /**
- * Replace With Theme Name functions and definitions
+ * KC Realty functions and definitions
  *
  * @package KC Realty
  */

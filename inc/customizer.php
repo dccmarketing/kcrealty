@@ -1,6 +1,6 @@
 <?php
 /**
- * Replace With Theme Name Theme Customizer
+ * KC Realty Theme Customizer
  *
  * @package KC Realty
  */
