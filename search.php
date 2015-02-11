@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package DocBlock
+ * @package KC Realty
  */
 
 get_header(); ?>

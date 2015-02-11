@@ -1,10 +1,10 @@
 <?php
 /**
  * Template Name: Content Sidebar
- * 
+ *
  * Description: Page template with sidebar on the right-side
  *
- * @package DocBlock
+ * @package KC Realty
  */
 
 get_header(); ?>

@@ -1,6 +1,6 @@
 <?php
 /**
- * @package DocBlock
+ * @package KC Realty
  */
 ?>
 

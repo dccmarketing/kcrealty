@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package DocBlock
+ * @package KC Realty
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

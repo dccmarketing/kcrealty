@@ -2,7 +2,7 @@
 /**
  * Replace With Theme Name Theme Customizer
  *
- * @package DocBlock
+ * @package KC Realty
  */
 
 /**

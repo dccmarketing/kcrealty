@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package DocBlock
+ * @package KC Realty
  */
 
 get_header();

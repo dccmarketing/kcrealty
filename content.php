@@ -1,6 +1,6 @@
 <?php
 /**
- * @package DocBlock
+ * @package KC Realty
  */
 
 ?><article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

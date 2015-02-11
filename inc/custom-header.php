@@ -12,7 +12,7 @@
 	<?php endif; // End header image check. ?>
 
  *
- * @package DocBlock
+ * @package KC Realty
  */
 
 /**
