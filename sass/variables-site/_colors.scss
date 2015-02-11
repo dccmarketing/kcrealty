@@ -1,27 +1,41 @@
-$light	: #fff;
-$med	: #ccc;
-$dark	: #020202;
+$light		: #fff;
+$med		: #ccc;
+$dark		: #020202;
+$trans 		: transparent;
+$red 		: #a01d20;
+$maroon 	: #5f2629;
+$blue 		: #457895;
+$bluegray 	: #51686c;
+$lightgray 	: #9fa1a1;
 
 // Backgrounds
 $color__background-body		: $light;
 $color__background-screen	: #f1f1f1;
 $color__background-hr		: $med;
-$color__background-button	: $med;
 $color__background-pre		: $med;
 $color__background-ins		: #fff9c0;
 $color__bg-input 			: $med;
+$color__background-button	: $blue;
+$color__bg-button-hover 	: lighten( $blue, 10% );
+$color__bg-button-focus 	: darken( $blue, 10% );
 
 // Text colors
-$color__text-screen			: #21759b;
+$color__text-screen			: $dark;
 $color__text-input			: $dark;
 $color__text-input-focus	: $dark;
-$color__link				: royalblue;
-$color__link-visited		: purple;
-$color__link-hover			: midnightblue;
-$color__text-main			: #404040;
+$color__link				: $red;
+$color__link-visited		: $red;
+$color__link-hover			: $maroon;
+$color__text-main			: $dark;
 $color__text-social 		: $light;
 $color__text-ins 			: $dark;
-$color__text-button 		: rgba(0, 0, 0, .8);
+$color__text-button 		: $light;
+$color__text-button-hover 	: $light;
+$color__text-button-focus 	: $light;
+$color__text-site-title 	: $dark;
+$color__text-header-desc1 	: $red;
+$color__text-header-desc2 	: $dark;
+$color__text-header-desc3 	: $blue;
 
 // Border colors
 $color__border-button		: $med $med #bbb;
@@ -40,17 +54,19 @@ $color__shadow-button-inner-focus 	: rgba(255, 255, 255, 0.5);
 $color__shadow-button-inner-2-focus : rgba(0, 0, 0, 0.15);
 
 // Menu colors
-$color__bg-menu-button			: $med;
-$color__bg-menu-button-mobile 	: $med;
-$color__bg-menu-item-mobile		: $med;
-$color__bg-menu-item			: $med;
-$color__bg-menu-current			: darken( $color__bg-menu-item, 25% );
-$color__text-menu-mobile		: $light;
-$color__text-menu-mobile-hover 	: $dark;
+$color__bg-menu-button			: $red;
+$color__bg-menu-button-mobile 	: $red;
+$color__bg-menu-item			: $light;
+$color__bg-menu-item-mobile		: $light;
+$color__bg-menu-current			: rgba( 95, 38, 41, 0.8 );
+$color__bg-menu-current-hover	: darken( $color__bg-menu-item, 25% );
+
 $color__text-menu				: $dark;
 $color__text-menu-hover			: darken( $color__bg-menu-item, 25% );
+$color__text-menu-mobile		: $light;
+$color__text-menu-mobile-hover 	: $lightgray;
 $color__text-menu-button		: $light;
 $color__text-menu-button-mobile : $light;
 $color__text-menu-current		: $light;
-$color__text-menu-current-hover	: $med;
+$color__text-menu-current-hover	: $lightgray;
 $color__text-submenu			: $light;

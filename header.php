@@ -26,7 +26,7 @@ wp_head();
 		<div class="header_wrap">
 			<div class="site-branding">
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				<h2 class="site-description"><span class="header-desc-1">Real Estate</span> | <span class="header-desc-2">Development</span> | <span class="header-desc-3">Management</span></h2>
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">

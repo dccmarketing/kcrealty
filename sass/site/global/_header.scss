@@ -15,8 +15,25 @@
 
 .site-title {
 	text-align: center;
+
+	a {
+		color 			: $color__text-site-title;
+		text-decoration : none;
+	}
 }
 
 .site-description {
 	text-align: center;
+}
+
+.header-desc-1 {
+	color: $color__text-header-desc1;
+}
+
+.header-desc-2 {
+	color: $color__text-header-desc2;
+}
+
+.header-desc-3 {
+	color: $color__text-header-desc3;
 }
