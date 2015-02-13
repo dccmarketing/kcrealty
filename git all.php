@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
+	$content_width = 1000; /* pixels */
 }
 
 if ( ! function_exists( 'kcrealty_setup' ) ) :
@@ -51,7 +51,8 @@ function kcrealty_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'kcrealty' ),
-		'social' => __( 'Social Links', 'kcrealty' )
+		'social' => __( 'Social Links', 'kcrealty' ),
+		'footer' => __( 'Footer Menu', 'kcrealty' )
 	) );
 
 	/*
@@ -71,10 +72,10 @@ function kcrealty_setup() {
 	) );*/
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'kcrealty_custom_background_args', array(
+	/*add_theme_support( 'custom-background', apply_filters( 'kcrealty_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
-	) ) );
+	) ) );*/
 
 } // kcrealty_setup()
 endif; // kcrealty_setup
@@ -88,8 +89,8 @@ add_action( 'after_setup_theme', 'kcrealty_setup' );
 function kcrealty_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'kcrealty' ),
-		'id'            => 'sidebar-1',
+		'name'          => __( 'Home Sidebar', 'kcrealty' ),
+		'id'            => 'sidebar-home',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -147,5 +148,3 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Slushamn themekit.
  */
 require get_template_directory() . '/inc/themekit.php';
-
-

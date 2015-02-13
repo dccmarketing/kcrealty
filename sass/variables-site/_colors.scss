@@ -1,12 +1,19 @@
 $light		: #fff;
+$translight : rgba( $light, 0.85 );
 $med		: #ccc;
-$dark		: #020202;
+$dark		: #404041;
 $trans 		: transparent;
 $red 		: #a01d20;
+$transred 	: rgba($red, 0.8);
 $maroon 	: #5f2629;
 $blue 		: #457895;
+$transblue 	: rgba($blue, 0.8);
 $bluegray 	: #51686c;
 $lightgray 	: #9fa1a1;
+$transgray 	: rgba($lightgray, 0.85);
+
+$gray 		: #ebedee;
+$transgray2 : rgba($gray, 0.85);
 
 // Backgrounds
 $color__background-body		: $light;
@@ -18,6 +25,12 @@ $color__bg-input 			: $med;
 $color__background-button	: $blue;
 $color__bg-button-hover 	: lighten( $blue, 10% );
 $color__bg-button-focus 	: darken( $blue, 10% );
+$color__bg-footer 			: $lightgray;
+$color__bg-header 			: $transgray2;
+$color__bg-header-mobile 	: $lightgray;
+$color__bg-nav-after 		: $transgray2;
+$color__bg-nav-after-subpage: $transgray2;
+
 
 // Text colors
 $color__text-screen			: $dark;
@@ -36,6 +49,8 @@ $color__text-site-title 	: $dark;
 $color__text-header-desc1 	: $red;
 $color__text-header-desc2 	: $dark;
 $color__text-header-desc3 	: $blue;
+$color__text-footer 		: $light;
+$color__text-footer-links 	: $light;
 
 // Border colors
 $color__border-button		: $med $med #bbb;
@@ -43,6 +58,7 @@ $color__border-button-hover	: $med #bbb #aaa;
 $color__border-button-focus	: #aaa #bbb #bbb;
 $color__border-input		: $med;
 $color__border-abbr			: #666;
+$color__border-submenu-item : $lightgray;
 
 // Shadow colors
 $color__shadow-button-text 			: rgba(255, 255, 255, 0.8);
@@ -54,19 +70,28 @@ $color__shadow-button-inner-focus 	: rgba(255, 255, 255, 0.5);
 $color__shadow-button-inner-2-focus : rgba(0, 0, 0, 0.15);
 
 // Menu colors
-$color__bg-menu-button			: $red;
-$color__bg-menu-button-mobile 	: $red;
-$color__bg-menu-item			: $light;
-$color__bg-menu-item-mobile		: $light;
-$color__bg-menu-current			: rgba( 95, 38, 41, 0.8 );
-$color__bg-menu-current-hover	: darken( $color__bg-menu-item, 25% );
+$color__bg-menu-button				: $red;
+$color__bg-menu-button-mobile 		: $red;
+$color__bg-menu-button-pseudo 		: $color__bg-menu-button-mobile;
+$color__bg-menu-item				: $transgray2;
+$color__bg-menu-item-hover 			: $transred;
+$color__bg-submenu					: $transred;
+$color__bg-menu-item-mobile-hover 	: $light;
+$color__bg-menu-current				: $transred;
+$color__bg-menu-current-hover		: darken( $color__bg-menu-item, 25% );
 
-$color__text-menu				: $dark;
-$color__text-menu-hover			: darken( $color__bg-menu-item, 25% );
-$color__text-menu-mobile		: $light;
-$color__text-menu-mobile-hover 	: $lightgray;
-$color__text-menu-button		: $light;
-$color__text-menu-button-mobile : $light;
-$color__text-menu-current		: $light;
-$color__text-menu-current-hover	: $lightgray;
-$color__text-submenu			: $light;
+$color__text-menu					: $dark;
+$color__text-menu-hover				: $light;
+$color__text-menu-mobile			: $light;
+$color__text-menu-item-hover 		: $light;
+$color__text-menu-item-mobile-hover : $red;
+$color__text-menu-button			: $light;
+$color__text-menu-button-mobile 	: $light;
+$color__text-menu-button-pseudo 	: $color__text-menu-button-mobile;
+$color__text-menu-current			: $light;
+$color__text-menu-current-hover		: $light;
+$color__text-submenu				: $light;
+
+//SVGs
+$color__svg-menu 					: $dark;
+$color__svg-footer 					: $light;

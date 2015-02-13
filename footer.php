@@ -16,19 +16,14 @@
 
 			<div class="footer-left"><?php
 
-				do_action( 'footer_left' );
+				get_template_part( 'menus/menu', 'footer' );
+
+				printf( __( '<div class="copyright">Designed and developed by <a href="%1$s">DCC Marketing</a> &copy %2$s <a href="%3$s" title="Login">%4$s</a></a></div>', 'kcrealty' ), 'http://dccmarketing.com', date( 'Y' ), get_admin_url(), get_bloginfo( 'name' ) );
 
 			?></div><!-- .footer_left -->
-			<div class="site-info"><?php
-
-				do_action( 'site_info' );
-
-			?></div><!-- .site-info -->
-			<div class="footer-right"><?php
-
-				do_action( 'footer_right' );
-
-			?></div><!-- .site-info -->
+			<div class="footer-right">
+				<a href="mailto:virginia@kccommercialrealty.com?subject=Email Alert Request&body=Please sign me up for your email alerts!" class="mailing-list-link"><?php echo kcrealty_get_svg( 'envelope' ); ?> Sign up for email alerts.</a>
+			</div><!-- .site-info -->
 
 		</div><!-- .footer-wrap -->
 

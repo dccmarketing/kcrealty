@@ -1,12 +1,20 @@
 .site-footer {
-	width 		: 100%;
-	float 		: left;
-	overflow 	: auto;
+	width 				: 100%;
+	float 				: left;
+	background-color 	: $color__bg-footer;
+	color 				: $color__text-footer;
+
+	a {
+		text-decoration : none;
+		color 			: $color__text-footer-links;
+	}
 }
 
 .footer-wrap {
-	max-width: $size__max-width;
-	margin: 0 auto;
+	max-width 	: $size__max-width;
+	margin 		: 0 auto;
+	overflow 	: auto;
+	padding 	: 2em 1em;
 }
 
 .footer-left {
@@ -15,18 +23,7 @@
 	overflow 	: auto;
 
 	@media only screen and (min-width: $bp__tablet) {
-		@include margcols( 5 );
-	}
-}
-
-.site-info {
-	text-align: center;
-	width 		: 100%;
-	float 		: left;
-	overflow 	: auto;
-
-	@media only screen and (min-width: $bp__tablet) {
-		@include margcols( 5, 3 );
+		width: 75%;
 	}
 }
 
@@ -36,6 +33,19 @@
 	overflow 	: auto;
 
 	@media only screen and (min-width: $bp__tablet) {
-		@include margcols( 5 );
+		width 		: 25%;
+		float 		: right;
+		text-align 	: right;
+	}
+
+	.dashicons-email-alt,
+	.envelope {
+		width 			: 40px;
+		height 			: 40px;
+		font-size 		: 40px;
+		margin-right 	: 0.35em;
+		vertical-align 	: middle;
+		fill 			: $color__svg-footer;
 	}
 }
+

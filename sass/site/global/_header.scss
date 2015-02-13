@@ -1,20 +1,50 @@
 .site-header {
 	// DO NOT ADD PADDING HERE! - it screws up menus
-	overflow 		: auto;
-	margin-bottom	: $size__default-bot-marg;
+	overflow 			: auto;
+	margin-bottom		: $size__default-bot-marg;
+	background-color 	: $color__bg-header-mobile;
+
 	@media only screen and (min-width: $bp__menu-button+1) {
-		overflow 	: visible;
+		overflow 		: visible;
+		background-color: transparent;
+		z-index 		: 100;
+		margin-top 		: -206px;
+	}
+
+	@media only screen and (min-width: $bp__tablet) {
+		margin-top 		: 0;
+		position 		: absolute;
+		top 			: 0;
+		width 			: $size__header-width;
+	}
+
+	@media only screen and (min-width: $bp__content1) {
+		left 			: $size__header-left;
+	}
+
+	.logo {
+		width 	: 90px;
+		height 	: 90px;
+		margin 	: 0 auto;
 	}
 }
 
 .site-branding {
-	padding		: 1em;
-	margin		: 0 auto;
-	max-width	: $size__max-width;
+	padding			: 1em;
+	margin			: 0 auto;
+	max-width		: $size__max-width;
+	background-color: $color__bg-header;
+
+	@media only screen and (min-width: $bp__menu-button+1) {
+		max-width: $size__header-width;
+	}
 }
 
 .site-title {
-	text-align: center;
+	text-align 		: center;
+	margin-top 		: 0;
+	text-transform 	: uppercase;
+	margin-bottom 	: 0;
 
 	a {
 		color 			: $color__text-site-title;
@@ -22,8 +52,29 @@
 	}
 }
 
+.site-title-1 {
+	display 		: block;
+	font-size 		: 30px;
+	font-weight 	: 700;
+	line-height 	: 1em;
+	text-align 		: center;
+}
+
+.site-title-2 {
+	display 		: block;
+	font-size 		: 24px;
+	line-height 	: 1em;
+	font-weight 	: 400;
+	letter-spacing 	: 6px;
+	text-align 		: center;
+}
+
 .site-description {
-	text-align: center;
+	text-transform 	: lowercase;
+	font-weight 	: 400;
+	font-size 		: 13px;
+	margin-top 		: 6px;
+	text-align 		: center;
 }
 
 .header-desc-1 {
@@ -36,4 +87,45 @@
 
 .header-desc-3 {
 	color: $color__text-header-desc3;
+}
+
+.underlay {
+	position 	: absolute;
+	top 		: -50px;
+	z-index 	: 49;
+}
+
+.rev_slider_wrapper {
+	@extend %overlay;
+
+	&:before {
+		top: -38.25%;
+	}
+
+	&:after {
+		top: -36.5%;
+	}
+}
+
+.featured-image {
+	display: none;
+	@extend %overlay;
+
+	@media only screen and (min-width: $bp__menu-button+1) {
+		display 			: block;
+		width 				: 100%;
+		min-height 			: 370px;
+		background-color 	: $red;
+		background-repeat 	: no-repeat;
+		background-position : center center;
+		background-size 	: cover;
+
+		&:before {
+			top: -19.5%;
+		}
+
+		&:after {
+			top: -20.75%;
+		}
+	}
 }
