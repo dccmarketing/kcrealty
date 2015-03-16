@@ -1,3 +1,7 @@
+.site {
+	@extend %overlay;
+}
+
 .site-header {
 	// DO NOT ADD PADDING HERE! - it screws up menus
 	overflow 			: auto;
@@ -8,7 +12,7 @@
 		overflow 		: visible;
 		background-color: transparent;
 		z-index 		: 100;
-		margin-top 		: -206px;
+		position 		: relative;
 	}
 
 	@media only screen and (min-width: $bp__tablet) {
@@ -26,6 +30,10 @@
 		width 	: 90px;
 		height 	: 90px;
 		margin 	: 0 auto;
+	}
+
+	a {
+		text-decoration: none;
 	}
 }
 
@@ -45,11 +53,7 @@
 	margin-top 		: 0;
 	text-transform 	: uppercase;
 	margin-bottom 	: 0;
-
-	a {
-		color 			: $color__text-site-title;
-		text-decoration : none;
-	}
+	color 			: $color__text-site-title;
 }
 
 .site-title-1 {
@@ -93,39 +97,21 @@
 	position 	: absolute;
 	top 		: -50px;
 	z-index 	: 49;
-}
-
-.rev_slider_wrapper {
-	@extend %overlay;
-
-	&:before {
-		top: -38.25%;
-	}
-
-	&:after {
-		top: -36.5%;
-	}
+	display 	: none;
 }
 
 .featured-image {
 	display: none;
-	@extend %overlay;
 
 	@media only screen and (min-width: $bp__menu-button+1) {
 		display 			: block;
 		width 				: 100%;
-		min-height 			: 370px;
-		background-color 	: $red;
+		min-height 			: 900px;
 		background-repeat 	: no-repeat;
 		background-position : center center;
 		background-size 	: cover;
-
-		&:before {
-			top: -19.5%;
-		}
-
-		&:after {
-			top: -20.75%;
-		}
+		position 			: absolute;
+		top 				: 0;
+		z-index 			: -1;
 	}
 }

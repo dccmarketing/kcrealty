@@ -77,6 +77,9 @@ function kcrealty_setup() {
 		'default-image' => '',
 	) ) );*/
 
+	add_image_size( 'newslist', 800, 300, TRUE );
+	add_image_size( 'staffthumb', 225, 225, TRUE );
+
 } // kcrealty_setup()
 endif; // kcrealty_setup
 add_action( 'after_setup_theme', 'kcrealty_setup' );
@@ -111,6 +114,8 @@ function kcrealty_scripts() {
 	wp_enqueue_script( 'kcrealty-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'kcrealty-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
+
+	wp_enqueue_script( 'kcrealty-acf-maps', get_template_directory_uri() . '/js/acf-map.min.js', array( 'jquery' ), '20150202', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

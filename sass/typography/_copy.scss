@@ -11,20 +11,27 @@ i {
 
 blockquote,
 q {
-	quotes: "\“" "\”" "‘" "’";
+	quotes 				: "\“" "\”" "‘" "’";
+	color 				: $color__text-quotes;
+	font-style 			: italic;
+	border 				: 3px solid $lightgray;
+	padding 			: 1em;
+	background-color 	: $transred;
 
 	&:before {
 		content		: open-quote;
 		font-size	: 1.25em;
+		line-height	: 1.25;
 	}
 
 	&:after {
 		content		: close-quote;
 		font-size	: 1.25em;
+		line-height	: 1.25;
 	}
 
-	p {
-		display: inline;
+	@media (min-width: 43.75em) {
+		line-height : 1.45833333;
 	}
 }
 

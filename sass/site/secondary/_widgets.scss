@@ -15,12 +15,36 @@
 	}
 }
 
+.widget-title {
+
+
+	.home & {
+		font-size: 2em;
+	}
+}
+
 .widget {
 	margin: 0 0 1.5em;
 
 	/* Make sure select elements fit in widgets */
 	select {
 		max-width: 100%;
+	}
+
+	ul {
+		margin 		: 0 0 $size__default-bot-marg 0;
+		list-style 	: none;
+		padding 	: 0;
+	}
+
+	li {
+		border-bottom 	: 1px solid $color__border-widget-divider;
+		padding 		: 1em 0;
+	}
+
+	a {
+		text-decoration : none;
+		color 			: $color__text-widget-links;
 	}
 }
 

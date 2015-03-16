@@ -214,12 +214,12 @@ function kcrealty_get_logo2() {
 
 	return '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0" y="0" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
   <g id="Layer_2">
-    <path fill="#414042" d="M1.2 70.3H3c0.3 0 0.6 0 0.9-0.1 0.2-0.1 0.4-0.2 0.5-0.3 0.1-0.1 0.2-0.2 0.2-0.4 0-0.1 0.1-0.3 0.1-0.4 0-0.2 0-0.3-0.1-0.4s-0.1-0.2-0.2-0.4c-0.1-0.1-0.3-0.2-0.5-0.3C3.6 68.1 3.3 68 3 68H1.2V70.3zM0.5 73.3v-5.9H3c0.8 0 1.3 0.1 1.8 0.4 0.4 0.3 0.6 0.7 0.6 1.3 0 0.3 0 0.5-0.1 0.7 -0.1 0.2-0.2 0.4-0.3 0.5 -0.1 0.1-0.3 0.2-0.4 0.3 -0.2 0.1-0.3 0.1-0.4 0.2 -0.1 0-0.2 0.1-0.3 0.1l1.9 2.5H4.8L3 71H1.2v2.4H0.5z"/>
-    <polygon fill="#414042" points="9.3 73.3 9.3 67.4 13.6 67.4 13.6 68 10 68 10 70.1 13.2 70.1 13.2 70.7 10 70.7 10 72.7 13.6 72.7 13.6 73.3 "/>
-    <path fill="#414042" d="M18.8 70.9h2.4L20 68.2 18.8 70.9zM16.9 73.3l2.8-5.9h0.7l2.8 5.9h-0.8l-0.8-1.9h-3l-0.8 1.9H16.9z"/>
-    <polygon fill="#414042" points="26.7 73.3 26.7 67.4 27.4 67.4 27.4 72.7 31 72.7 31 73.3 "/>
-    <polygon fill="#414042" points="33.1 68 33.1 67.4 38.7 67.4 38.7 68 36.3 68 36.3 73.3 35.5 73.3 35.5 68 "/>
-    <polygon fill="#414042" points="41.8 67.4 42.7 67.4 44.8 70 46.9 67.4 47.8 67.4 45.2 70.6 45.2 73.3 44.5 73.3 44.5 70.6 "/>
+	<path fill="#414042" d="M1.2 70.3H3c0.3 0 0.6 0 0.9-0.1 0.2-0.1 0.4-0.2 0.5-0.3 0.1-0.1 0.2-0.2 0.2-0.4 0-0.1 0.1-0.3 0.1-0.4 0-0.2 0-0.3-0.1-0.4s-0.1-0.2-0.2-0.4c-0.1-0.1-0.3-0.2-0.5-0.3C3.6 68.1 3.3 68 3 68H1.2V70.3zM0.5 73.3v-5.9H3c0.8 0 1.3 0.1 1.8 0.4 0.4 0.3 0.6 0.7 0.6 1.3 0 0.3 0 0.5-0.1 0.7 -0.1 0.2-0.2 0.4-0.3 0.5 -0.1 0.1-0.3 0.2-0.4 0.3 -0.2 0.1-0.3 0.1-0.4 0.2 -0.1 0-0.2 0.1-0.3 0.1l1.9 2.5H4.8L3 71H1.2v2.4H0.5z"/>
+	<polygon fill="#414042" points="9.3 73.3 9.3 67.4 13.6 67.4 13.6 68 10 68 10 70.1 13.2 70.1 13.2 70.7 10 70.7 10 72.7 13.6 72.7 13.6 73.3 "/>
+	<path fill="#414042" d="M18.8 70.9h2.4L20 68.2 18.8 70.9zM16.9 73.3l2.8-5.9h0.7l2.8 5.9h-0.8l-0.8-1.9h-3l-0.8 1.9H16.9z"/>
+	<polygon fill="#414042" points="26.7 73.3 26.7 67.4 27.4 67.4 27.4 72.7 31 72.7 31 73.3 "/>
+	<polygon fill="#414042" points="33.1 68 33.1 67.4 38.7 67.4 38.7 68 36.3 68 36.3 73.3 35.5 73.3 35.5 68 "/>
+	<polygon fill="#414042" points="41.8 67.4 42.7 67.4 44.8 70 46.9 67.4 47.8 67.4 45.2 70.6 45.2 73.3 44.5 73.3 44.5 70.6 "/>
   </g>
   <rect x="29.3" y="77.1" fill="#414042" width="0.3" height="2.9"/>
   <rect x="66.5" y="77.1" fill="#414042" width="0.3" height="2.9"/>
@@ -303,30 +303,118 @@ function kcrealty_get_thumbnail_url( $postID, $size = 'thumbnail' ) {
 
 } // kcrealty_get_thumbnail_url()
 
+/**
+ * Returns a div with a background image - either the featured image
+ * 	or there isn't one, the default header image.
+ *
+ * @param 	int 		$postID 	The Post/Page ID
+ * @return 	mixed 					A div with a background image
+ */
 function kcrealty_get_featured_image( $postID ) {
 
 	$bg_image = kcrealty_get_thumbnail_url( $postID, 'full' );
 
 	if ( ! $bg_image ) {
 
-		$bg_image = get_field( 'default_header_image', 'option' );
+		$bg_image = get_theme_mod( 'default_header_image' );
 
 	}
 
-	return '<div class="featured-image" style="background-image:url(' . $bg_image . ');"></div>';
+	return $bg_image;
 
 } // kcrealty_get_featured_image()
 
 /**
- * Add Themes Options page, if using ACF
+ * Adds the individual sections, settings, and controls to the theme customizer
  */
-if( function_exists('acf_add_options_page') ) {
+function kcrealty_customizer( $wp_customize ) {
 
-	$args['page_title'] 	= 'Theme Options';
-	$args['menu_title'] 	= 'Theme Options';
-	$args['parent_slug'] 	= 'themes.php';
-	$args['capabilities'] 	= 'edit_posts';
+/*	// Add Theme options to Title & Tagline section
+	$wp_customize->add_setting( 'name1' );
+	$wp_customize->add_control(
+		'name1',
+		array(
+			'label'    => __( 'Name Part 1', 'kcrealty' ),
+			'section'  => 'title_tagline',
+			'settings' => 'name1',
+		)
+	);
 
-	acf_add_options_sub_page( $args );
+	$wp_customize->add_setting( 'name2' );
+	$wp_customize->add_control(
+		'name2',
+		array(
+			'label'    => __( 'Name Part 2', 'kcrealty' ),
+			'section'  => 'title_tagline',
+			'settings' => 'name2',
+		)
+	);
 
-}
+	$wp_customize->add_setting( 'core_business_1' );
+	$wp_customize->add_control(
+		'core_business_1',
+		array(
+			'label'    => __( 'Core Business 1', 'kcrealty' ),
+			'section'  => 'title_tagline',
+			'settings' => 'core_business_1',
+		)
+	);
+
+	$wp_customize->add_setting( 'core_business_2' );
+	$wp_customize->add_control(
+		'core_business_2',
+		array(
+			'label'    => __( 'Core Business 2', 'kcrealty' ),
+			'section'  => 'title_tagline',
+			'settings' => 'core_business_2',
+		)
+	);
+
+	$wp_customize->add_setting( 'core_business_3' );
+	$wp_customize->add_control(
+		'core_business_3',
+		array(
+			'label'    => __( 'Core Business 2', 'kcrealty' ),
+			'section'  => 'title_tagline',
+			'settings' => 'core_business_3',
+		)
+	);*/
+
+	// Add Default Header Image section & field
+	$wp_customize->add_section(
+		'default_header_image_section',
+		array(
+			'title' 		=> __( 'Default Header Image', 'kcrealty' ),
+			'capability' 	=> 'edit_theme_options',
+			'description' 	=> __( 'Image to use if a page does not have a header image.', 'kcrealty' )
+		)
+	);
+
+	$wp_customize->add_setting( 'default_header_image' );
+
+	$wp_customize->add_control(
+		new WP_Customize_Image_Control( $wp_customize, 'default_header_image',
+			array(
+				'label'    => __( 'Default Header Image', 'kcrealty' ),
+				'section'  => 'default_header_image_section',
+				'settings' => 'default_header_image'
+			)
+		)
+	);
+
+} // kcrealty_customizer()
+
+add_action( 'customize_register', 'kcrealty_customizer' );
+
+/**
+ * Adds things to footer
+ *
+ * @return [type] [description]
+ */
+function kcrealty_print_to_footer() {
+
+	?><script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script><?php
+
+} // kcrealty_print_to_footer()
+
+add_action( 'wp_footer', 'kcrealty_print_to_footer' );

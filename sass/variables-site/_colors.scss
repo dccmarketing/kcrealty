@@ -1,7 +1,9 @@
 $light		: #fff;
 $translight : rgba( $light, 0.85 );
+$translight2: rgba( $light, 0.7 );
 $med		: #ccc;
 $dark		: #404041;
+$transdark 	: rgba(0,0,0,0.5);
 $trans 		: transparent;
 $red 		: #a01d20;
 $transred 	: rgba($red, 0.8);
@@ -13,7 +15,7 @@ $lightgray 	: #9fa1a1;
 $transgray 	: rgba($lightgray, 0.85);
 
 $gray 		: #ebedee;
-$transgray2 : rgba($gray, 0.85);
+$transgray2 : rgba(#ebedee, 0.85);
 
 // Backgrounds
 $color__background-body		: $light;
@@ -51,14 +53,17 @@ $color__text-header-desc2 	: $dark;
 $color__text-header-desc3 	: $blue;
 $color__text-footer 		: $light;
 $color__text-footer-links 	: $light;
+$color__text-widget-links 	: $dark;
+$color__text-quotes 		: $light;
 
 // Border colors
-$color__border-button		: $med $med #bbb;
-$color__border-button-hover	: $med #bbb #aaa;
-$color__border-button-focus	: #aaa #bbb #bbb;
-$color__border-input		: $med;
-$color__border-abbr			: #666;
-$color__border-submenu-item : $lightgray;
+$color__border-button			: $lightgray;
+$color__border-button-hover		: $lightgray;
+$color__border-button-focus		: $lightgray;
+$color__border-input			: $lightgray;
+$color__border-abbr				: $lightgray;
+$color__border-submenu-item 	: $lightgray;
+$color__border-widget-divider 	: $lightgray;
 
 // Shadow colors
 $color__shadow-button-text 			: rgba(255, 255, 255, 0.8);
@@ -75,9 +80,10 @@ $color__bg-menu-button-mobile 		: $red;
 $color__bg-menu-button-pseudo 		: $color__bg-menu-button-mobile;
 $color__bg-menu-item				: $transgray2;
 $color__bg-menu-item-hover 			: $transred;
-$color__bg-submenu					: $transred;
+$color__bg-submenu1					: $lightgray;
+$color__bg-submenu2					: $transred;
 $color__bg-menu-item-mobile-hover 	: $light;
-$color__bg-menu-current				: $transred;
+$color__bg-menu-current				: $transblue;
 $color__bg-menu-current-hover		: darken( $color__bg-menu-item, 25% );
 
 $color__text-menu					: $dark;
@@ -90,6 +96,8 @@ $color__text-menu-button-mobile 	: $light;
 $color__text-menu-button-pseudo 	: $color__text-menu-button-mobile;
 $color__text-menu-current			: $light;
 $color__text-menu-current-hover		: $light;
+$color__text-menu-current-mobile 	: $blue;
+$color__text-menu-current-mobile-hover: $blue;
 $color__text-submenu				: $light;
 
 //SVGs

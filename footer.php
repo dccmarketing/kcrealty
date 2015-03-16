@@ -16,7 +16,20 @@
 
 			<div class="footer-left"><?php
 
-				get_template_part( 'menus/menu', 'footer' );
+				if ( has_nav_menu( 'footer' ) ) {
+
+					$menu['theme_location'] 	= 'footer';
+					$menu['container'] 			= 'div';
+					$menu['container_id'] 		= 'menu-footer';
+					$menu['container_class'] 	= 'menu nav-footer';
+					$menu['menu_id'] 			= 'menu-footer-items';
+					$menu['menu_class'] 		= 'menu-items';
+					$menu['depth'] 				= 1;
+					$menu['fallback_cb'] 		= '';
+
+					wp_nav_menu( $menu );
+
+				}
 
 				printf( __( '<div class="copyright">Designed and developed by <a href="%1$s">DCC Marketing</a> &copy %2$s <a href="%3$s" title="Login">%4$s</a></a></div>', 'kcrealty' ), 'http://dccmarketing.com', date( 'Y' ), get_admin_url(), get_bloginfo( 'name' ) );
 

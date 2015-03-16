@@ -16,7 +16,7 @@
 		padding-left: 0;
 		display 	: none;
 
-		@media only screen and (min-width: $bp__menu-button+1) {
+		@media only screen and (min-width: $bp__tablet) {
 			display : inline-block;
 			width 	: 100%;
 		}
@@ -24,8 +24,12 @@
 		ul {
 			display		: inherit;
 
+			@media only screen and (min-width: $bp__menu-button+1) {
+				background	: $color__bg-submenu1;
+			}
+
 			@media only screen and (min-width: $bp__tablet) {
-				background	: $color__bg-submenu;
+				background	: $color__bg-submenu2;
 				box-shadow	: 0 3px 3px rgba(0, 0, 0, 0.2);
 				float		: left;
 				position	: absolute;
@@ -91,7 +95,7 @@
 			li {
 				margin: 0;
 
-				@media only screen and (min-width: $bp__menu-button+1) {
+				@media only screen and (min-width: $bp__menu-button+1) and (max-width: $bp__tablet) {
 					display : inline-block;
 					width 	: 49%;
 				}
@@ -109,7 +113,7 @@
 
 	li {
 
-		@media only screen and (min-width: $bp__menu-button+1) {
+		@media only screen and (min-width: $bp__tablet) {
 			position 	: relative;
 			margin 	 	: 0.5em 0;
 		}
@@ -121,7 +125,7 @@
 				color 		: $color__text-menu-item-mobile-hover;
 				font-weight : 700;
 
-				@media only screen and (min-width: $bp__menu-button+1) {
+				@media only screen and (min-width: $bp__tablet) {
 					background 	: $color__bg-menu-item-hover;
 					color 		: $color__text-menu-item-hover;
 				}
@@ -150,7 +154,7 @@
 		text-decoration	: none;
 		color 			: $color__text-menu-mobile;
 
-		@media only screen and (min-width: $bp__menu-button+1) {
+		@media only screen and (min-width: $bp__tablet) {
  			color 			: $color__text-menu;
 			background-color: $color__bg-menu-item;
 			transition 		: background 0.3s ease, color 0.3s ease;
@@ -170,7 +174,7 @@
 	.current-menu-parent,
 	.current_page_ancestor {
 
-		@media only screen and (min-width: $bp__menu-button+1) {
+		@media only screen and (min-width: $bp__tablet) {
 			background: $transblue;
 		}
 
@@ -180,17 +184,30 @@
 
 		> a {
 			color: $color__text-menu-current;
+
+			@media only screen and (min-width: $bp__tablet) {
+				background: transparent;
+			}
 		}
 
 		&:hover {
 
 			> a {
-				color 		: $color__text-menu-current-hover;
-				text-shadow : 0px 0px 3px $light;
+				color 		: $color__text-menu-current-mobile-hover;
 
-				@media only screen and (min-width: $bp__menu-button+1) {
-					background: $transblue;
+				@media only screen and (min-width: $bp__tablet) {
+					background 	: $transblue;
+					color 		: $color__text-menu-current-hover;
 				}
+			}
+		}
+
+		ul {
+
+
+			li {
+
+				background-color: transparent;
 			}
 		}
 	}
@@ -215,29 +232,39 @@
 	}
 
 	.circleandarrow {
-		width 			: 25px;
-		height 			: 25px;
-		float 			: right;
-		fill 			: $color__svg-menu;
+		display: none;
+
+		@media only screen and (min-width: $bp__tablet) {
+			display 		: inherit;
+			width 			: 25px;
+			height 			: 25px;
+			float 			: right;
+			fill 			: $color__svg-menu;
+		}
 	}
 
-	@media only screen and (min-width: $bp__tablet) {
+	&:after {
 
-		&:after {
+		@media only screen and (min-width: $bp__tablet) {
 			display 	: block;
 			content 	: "";
 			width 		: 100%;
 			height 		: 200px;
-			background 	: rgba(235,237,238,1);
-			background 	: -moz-linear-gradient(top, rgba(235,237,238,1) 0%, rgba(255,255,255,0.85) 100%);
-			background 	: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(235,237,238,1)), color-stop(100%, rgba(255,255,255,0.85)));
-			background 	: -webkit-linear-gradient(top, rgba(235,237,238,1) 0%, rgba(255,255,255,0.85) 100%);
-			background 	: -o-linear-gradient(top, rgba(235,237,238,1) 0%, rgba(255,255,255,0.85) 100%);
-			background 	: -ms-linear-gradient(top, rgba(235,237,238,1) 0%, rgba(255,255,255,0.85) 100%);
-			background 	: linear-gradient(to bottom, rgba(235,237,238,1) 0%, rgba(255,255,255,0.85) 100%);
+			background 	: rgba(235,237,238,0.85);
+			background 	: -moz-linear-gradient(top, rgba(235,237,238,0.5) 0%, rgba(255,255,255,0.5) 100%);
+			background 	: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(235,237,238,0.5)), color-stop(100%, rgba(255,255,255,0.5)));
+			background 	: -webkit-linear-gradient(top, rgba(235,237,238,0.5) 0%, rgba(255,255,255,0.5) 100%);
+			background 	: -o-linear-gradient(top, rgba(235,237,238,0.5) 0%, rgba(255,255,255,0.5) 100%);
+			background 	: -ms-linear-gradient(top, rgba(235,237,238,0.5) 0%, rgba(255,255,255,0.5) 100%);
+			background 	: linear-gradient(to bottom, rgba(235,237,238,0.5) 0%, rgba(255,255,255,0.5) 100%);
 			filter 		: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebedee', endColorstr='#ffffff', GradientType=0 );
+		}
 
-			.home & {
+
+		.home & {
+			height: 0;
+
+			@media only screen and (min-width: $bp__content1) {
 				height 				: 130px;
 				background-color 	: $color__bg-nav-after-subpage;
 			}
@@ -260,7 +287,7 @@
 .menu-toggle {
 	@include menutoggle();
 
-	@media only screen and (min-width: $bp__menu-button+1) {
+	@media only screen and (min-width: $bp__tablet) {
 		display 	: none;
 		background 	: $color__bg-menu-button;
 		color 		: $color__text-menu-button;

@@ -25,7 +25,7 @@ add_filter( 'posts_where', 'martiandliz_strip_attachments' );
 
 get_header();
 
-	?><div id="content" class="narrowcolumn">
+	?><div id="content" class="content-area">
 
 		<h2>Can't find that page, sorry... (Error 404)</h2>
 
@@ -65,7 +65,7 @@ get_header();
 
 			?><li>
 				<label for="s"><strong>Search</strong> for it:</label>
-				<form style="display:inline;" action="<?php bloginfo( 'siteurl' ); ?>">
+				<form style="display:inline;" action="<?php bloginfo( 'url' ); ?>">
 					<input type="text" value="<?php echo esc_attr( $s ); ?>" id="s" name="s"/> <input type="submit" value="Search"/>
 				</form>
 			</li>
@@ -74,11 +74,11 @@ get_header();
 
 			</li>
 			<li>
-				<strong>Look</strong> for it in the <a href="<?php bloginfo( 'siteurl' ); ?>/sitemap/">sitemap</a>.
+				<strong>Look</strong> for it in the <a href="<?php bloginfo( 'url' ); ?>/sitemap/">sitemap</a>.
 
 			</li>
 			<li>
-				<strong>Start over again</strong> at my <a href="<?php bloginfo( 'siteurl' ); ?>">homepage</a> (and please contact me to say what went wrong, so I can fix it).
+				<strong>Start over again</strong> at my <a href="<?php bloginfo( 'url' ); ?>">homepage</a> (and please contact me to say what went wrong, so I can fix it).
 			</li>
 		</ol>
 

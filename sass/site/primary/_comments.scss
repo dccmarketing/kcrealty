@@ -4,3 +4,11 @@
 .bypostauthor {
 	display: block;
 }
+.comments-link {
+	display: block;
+
+	@media only screen and (min-width: $bp__post-meta) {
+		display : inherit;
+		float 	: right;
+	}
+}

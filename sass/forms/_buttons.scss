@@ -5,13 +5,10 @@ input[type="submit"] {
 	border 				: 1px solid;
 	border-color 		: $color__border-button;
 	background 			: $color__background-button;
-	box-shadow 			: inset 0 1px 0 $color__shadow-button-inner, inset 0 15px 17px $color__shadow-button-inner, inset 0 -5px 12px $color__shadow-button-inner-2;
 	color 				: $color__text-button;
 	@include font-size(0.75);
 	line-height 		: 1;
-	padding 			: .6em 1em .4em;
-	text-shadow 		: 0 1px 0 $color__shadow-button-text;
-	border-radius		: 3px;
+	padding 			: .6em 1em;
 
 	&:hover {
 		border-color 		: $color__border-button-hover;

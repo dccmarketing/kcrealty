@@ -1,0 +1,89 @@
+.staff-wrap {
+	text-align 			: center;
+	margin 				: 0 auto 1.5em;
+	height 				: 225px;
+	width 				: 225px;
+	color 				: $light;
+	background-size 	: cover;
+	background-repeat 	: no-repeat;
+	position 			: relative;
+	color 				: $light;
+
+	@media only screen and (min-width: $bp__menu-button+1) {
+		display 		: inline-block;
+		vertical-align 	: top;
+		margin-left 	: 1.5%;
+		margin-right 	: 1.5%;
+	}
+
+	.hover {
+		position 		: absolute;
+		width 			: 100%;
+		bottom 			: 0;
+		background-color: $transdark;
+
+		@media only screen and (min-width: $bp__laptop) {
+			background-color: transparent;
+			bottom 			: 1em;
+		}
+	}
+}
+
+
+
+.staff-link {
+	text-decoration : none;
+	color 			: $light !important;
+	position 		: absolute;
+	left 			: 0;
+	height 			: 100%;
+	width 			: 100%;
+	transition 		: opacity 0.3s ease;
+
+	@media only screen and (min-width: $bp__laptop) {
+		opacity 		: 0;
+		background-color: $transdark;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+.directory-wrap {
+	text-align: center;
+
+	.staff-name,
+	.staff-position, {
+		margin 		: 0;
+		padding 	: 0.1em;
+		line-height : 1.2;
+	}
+}
+
+
+.staff-email,
+.staff-vcard {
+	display: block;
+}
+
+.staff-single-image {
+
+	@media only screen and (min-width: $bp__post-meta) {
+		margin-right: 2.33%;
+		width 		: 30%;
+	}
+}
+
+.staff-single-info {
+
+	@media only screen and (min-width: $bp__post-meta) {
+		display 		: inline-block;
+		vertical-align 	: top;
+		width 			: 67%;
+	}
+
+	.entry-title {
+		margin-top: 0;
+	}
+}
